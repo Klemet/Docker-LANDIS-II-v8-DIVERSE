@@ -1,0 +1,6 @@
+numpy
+tqdm
+rasterio
+pandas
+# GDAL is not needed anymore
+# gdal
