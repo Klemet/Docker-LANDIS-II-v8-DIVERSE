@@ -2,5 +2,5 @@ numpy
 tqdm
 rasterio
 pandas
-# GDAL is not needed anymore
-# gdal
+# GDAL python bindings (system libgdal-dev/gdal-bin must be installed first)
+gdal
