@@ -1,7 +1,12 @@
-# Using the latest image from https://github.com/LANDIS-II-Foundation/Tool-Docker-Apptainer as a base
-# This image must be built already on your computer
-# To build it, you can download the https://github.com/LANDIS-II-Foundation/Tool-Docker-Apptainer repository and follow the instructions there
-FROM landis-ii-v8-uclv2-release:ubuntu-26.04
+# Base image: the UCLv2 release published by https://github.com/LANDIS-II-Foundation/Tool-Docker-Apptainer
+# It is pulled from GHCR and pinned by content digest, so this build always starts from the
+# same bits and does not require building the base image locally first.
+# The pinned digest corresponds to the build of Tool-Docker-Apptainer main that includes the
+# Forest Roads / Magic Harvest library-shadowing fixes (extension pins fa1af33 / 4685b7f).
+# To move to a newer base, get its digest with:
+#   docker buildx imagetools inspect ghcr.io/landis-ii-foundation/landis-ii-v8-uclv2-release:ubuntu-26.04
+# and replace the sha256:... below with it.
+FROM ghcr.io/landis-ii-foundation/landis-ii-v8-uclv2-release:ubuntu-26.04@sha256:d4bba5ea983b74a3e58c46c94e254971f48c022d2080d828fd0caa8b2e9cba85
 
 ARG LANDIS_GITHUB="https://github.com/LANDIS-II-Foundation"
 
